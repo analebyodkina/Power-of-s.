@@ -1,0 +1,212 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+html,body {
+    height: 100%;
+}
+body, ul, h1,p {
+    margin: 0;
+}
+body {
+    background: linear-gradient(124.53deg, #FC3F5F 0%, #7D61FF 100.32%);
+    background-repeat: no-repeat;
+    color: #F2F4F7;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding: 50px;
+}
+/* весь это враппер с его свойстваи нужен, чтоб бг не слетал при адаптиве */
+.container { 
+    max-width: 1410px;   
+    margin-inline: auto;
+    padding: 32px;
+    padding-bottom: 177px;
+    background: linear-gradient(180deg, rgba(43, 34, 21, 0.8) -1.22%, #22282E 101.33%);
+    box-shadow: 0px 0px 250px rgba(0, 0, 0, 0.3);
+    border-radius: 32px;    
+}
+header {
+    margin-bottom: 227px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.header__logo {
+    min-width: 175px;
+}
+.header__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+li a {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #A0A3A7;
+}
+li a:hover {
+    transform: scale(1.3);
+    display: inline-block;
+}
+label {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* label вынесла в абсолютную, чтоб хэдер и ссылки были по центру */
+#menuCheckbox {
+    display: none;    
+}
+.icon-close, .icon-menu {
+    display: none;
+}
+.header__btn {
+    min-width: 175px;            
+}
+.header__btn a {
+    color: #24282E;
+    font-size: 14px;
+    line-height: 21px; 
+    display: inline-block;
+    border: 0;
+    text-align: center;
+    background: linear-gradient(93.22deg, #E1E1E1 8.37%, #FFFFFF 99.95%);
+    box-shadow: 0px 4px 50px rgba(37, 37, 37, 0.08), inset 1px 1px 1px rgba(135, 135, 135, 0.32);
+    border-radius: 999px;
+    padding: 16px 24px; 
+    font-weight: 600; 
+}
+.header__btn a:hover {
+    text-decoration: underline;    
+}
+.main {
+    max-width: 598px;
+    text-align: center;
+    margin-inline: auto;
+}
+h1 {
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 108px;
+    color: #F2F4F7;
+    padding-bottom: 32px;
+}
+p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    color: #F2F4F7;
+}
+.main__btn {
+    border: 2px solid #FC40F4;
+    border-radius: 999px;
+    display: inline-block;
+    min-width: 239px;
+    padding: 16px 32px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FC40F4;
+    margin: 80px 0;
+}
+.main__btn:hover {
+    text-decoration: underline;    
+}
+.main__icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+@media screen and (max-width: 992px) {
+    header {
+        margin-bottom: 75px;
+    }
+    .header__btn {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main {
+        max-width: 550px;
+    }
+    h1 {
+        font-size: 45px;
+        line-height: 80px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .header__logo {
+        min-width: auto;
+    }
+}
+@media screen and (max-width: 576px) {
+    .wrapper {
+        padding: 25px;
+    }
+    .main__btn {
+        min-width: 150px;
+    }
+    .header__links {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #22282E;
+        padding: 50px;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(-150%);
+        transition: .2s all ease-in-out;
+    }
+    #menuCheckbox {
+        display: none;
+    }
+    label {
+        position: relative;
+    }
+    .icon-close {
+        display: none;
+    }
+    .icon-menu {
+        display: inline-block;
+    }
+    #menuCheckbox:checked~.header__links {
+        transform: translateX(0);
+    }
+    #menuCheckbox:checked~label .icon-close {
+        display: inline-block;
+    }
+    #menuCheckbox:checked~label .icon-menu {
+        display: none;
+    }
+}
+@media screen and (max-width: 300px) {
+    .wrapper {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 60px;
+    }
+}
